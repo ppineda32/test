@@ -35,15 +35,15 @@ from airflow import DAG
 from airflow.decorators import task
 
 
-[docs]log = logging.getLogger(__name__)
+log = logging.getLogger(__name__)
 
 
 
-[docs]PYTHON = sys.executable
+PYTHON = sys.executable
 
 
 
-[docs]BASE_DIR = tempfile.gettempdir()
+BASE_DIR = tempfile.gettempdir()
 
 
 with DAG(
@@ -56,7 +56,7 @@ with DAG(
     # [START howto_operator_python]
     @task(task_id="print_the_context")
 
-[docs]    def print_context(ds=None, **kwargs):
+def print_context(ds=None, **kwargs):
         """Print the Airflow context and ds variable from the context."""
         pprint(kwargs)
         print(ds)
